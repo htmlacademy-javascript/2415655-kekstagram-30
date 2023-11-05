@@ -1,13 +1,12 @@
-import {similarComments, similarPosts} from './data.js';
+import {MAX_PHOTO, getPhotosDesc} from './data.js';
+import {renderPhotos} from './photos.js';
+
+const photoArray = getPhotosDesc(MAX_PHOTO);
+renderPhotos(photoArray);
+
+console.log(photoArray)
+
 
 console.log(
-    similarComments()
-);
-console.log(
-    similarPosts()
-);
-
-
-console.log(
-  similarPosts
+  getPhotosDesc()
 );
