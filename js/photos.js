@@ -23,3 +23,4 @@ const renderPhotos = (photoArray) => {
 
 export {renderPhotos};
 
+ 
