@@ -7,9 +7,7 @@ const ID = [
 const DESC = [
   'Photo is great', 'Photo is not great'
 ];
-const LIKES = [
-  15,16,17
-];
+
 const IMG = [
   1,2,3,4,5,6
 ];
@@ -29,6 +27,13 @@ const NAME = [
   'Nicol',
   'Anna'
 ];
+const createComments = () => ({
+
+  id: getRandomArrayElement(ID),
+  avatar: `img/avatar-${[getRandomArrayElement(IMG)]}.svg`,
+  message: getRandomArrayElement(MESSAGE),
+  name: getRandomArrayElement(NAME),
+});
 
 const createPost = () => ({
   id: getRandomArrayElement(ID),
@@ -38,20 +43,13 @@ const createPost = () => ({
   comments: Array.from({length: getRandomInteger(0, 30)}, createComments)
 });
 
-const createComments = () => ({
 
-  id: getRandomArrayElement(ID),
-  avatar: `img/avatar-${[getRandomArrayElement(IMG)]}.svg`,
-  message: getRandomArrayElement(MESSAGE),
-  name: getRandomArrayElement(NAME),
-});
-
-//const similarComments = Array.from({length: 30}, createComments);
-//const similarPosts = Array.from({length: 25}, createPost);
+const similarComments = Array.from({length: 30}, createComments);
+const similarPosts = Array.from({length: 25}, createPost);
 
 const getPhotosDesc = (n) => Array.from({length: n}, createPost);
 
 
-export {getPhotosDesc,createPost,MAX_PHOTO};
+export {similarComments,similarPosts,getPhotosDesc,createPost,MAX_PHOTO};
 
 
