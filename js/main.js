@@ -4,9 +4,4 @@ import {renderPhotos} from './photos.js';
 const photoArray = getPhotosDesc(MAX_PHOTO);
 renderPhotos(photoArray);
 
-console.log(photoArray)
 
-
-console.log(
-  getPhotosDesc()
-);
