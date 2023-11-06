@@ -1,13 +1,5 @@
-import {similarComments, similarPosts} from './data.js';
+import {getPictures} from './data.js';
+import {renderGallery} from './gallery.js';
 
-console.log(
-    similarComments()
-);
-console.log(
-    similarPosts()
-);
+renderGallery(getPictures());
 
-
-console.log(
-  similarPosts
-);
