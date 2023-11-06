@@ -7,7 +7,9 @@ const ID = [
 ];
 
 const DESC = [
-  'Photo is great', 'Photo is not great', 'Photo is good', 'Photo is bad'
+  'Photo is great', 'Photo is not great', 'Photo is good', 'Photo is bad',
+  'Photo is great', 'Photo is not great'
+
 ];
 
 const IMG = [
@@ -56,5 +58,6 @@ const getPictures = () => Array.from(
 
 
 export {getPictures};
+
 
 
