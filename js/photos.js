@@ -1,26 +1,33 @@
+import { getPhotosDesc, MAX_PHOTO } from './data.js';
+import './modal.js';
 
-const templateFragment = document.querySelector('#picture').content.querySelector('a');
+//находим dom елемент блока куда будем добавлять фотографии
+const picturesList = document.querySelector('.pictures');
 
+//находим элемент шаблона для добавления фото
+const picture = document.querySelector('#picture').content;
+const pictureTemplate = picture.querySelector('a');
 
-const picturesContainer = document.querySelector('.pictures');
+//создаем массив с фотографиями при помощи вызова ранее созданнной функции
+const photoPostArray = getPhotosDesc(MAX_PHOTO);
 
-const fragment = document.createDocumentFragment();
+//создаем documentFragment
+const picturesListFragment = document.createDocumentFragment();
 
-const renderPhotos = (photoArray) => {
-  photoArray.forEach(({url, desc, likes, comments}) => {
-    const element = templateFragment.cloneNode(true);
-    element.querySelector('.picture__img').src = url;
-    element.querySelector('.picture__img').alt = desc;
-    element.querySelector('.picture__likes').textContent = likes;
-    element.querySelector('.picture__comments').textContent = comments.length;
-
-
-    fragment.appendChild(element);
+const renderPhotoPosts = () => {
+  photoPostArray.forEach(({ url, description, likes, comments }) => {
+    const photoElement = pictureTemplate.cloneNode(true);
+    photoElement.querySelector('.picture__img').src = url;
+    photoElement.querySelector('.picture__img').alt = description;
+    photoElement.querySelector('.picture__likes').textContent = likes;
+    photoElement.querySelector('.picture__comments').textContent = comments.length;
+    photoElement.comments = comments;
+    photoElement.description = description;
+    photoElement.url = url;
+    photoElement.likes = likes;
+    picturesListFragment.appendChild(photoElement);
   });
 
-  picturesContainer.appendChild(fragment);
+  picturesList.appendChild(picturesListFragment);
 };
-
-export {renderPhotos};
-
- 
+renderPhotoPosts();
