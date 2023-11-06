@@ -1,9 +1,11 @@
 import {getRandomArrayElement, getRandomInteger} from './util.js';
 
 const MAX_PHOTO = 25;
+
 const ID = [
   1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25
 ];
+
 const DESC = [
   'Photo is great', 'Photo is not great'
 ];
@@ -11,6 +13,7 @@ const DESC = [
 const IMG = [
   1,2,3,4,5,6
 ];
+
 const MESSAGE = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
@@ -19,6 +22,7 @@ const MESSAGE = [
   'Я поскользнулся на банановой кожуре и уронил фотоаппарат на кота и у меня получилась фотография лучше.',
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!'
 ];
+
 const NAME = [
   'Ivan',
   'Artem',
@@ -27,6 +31,7 @@ const NAME = [
   'Nicol',
   'Anna'
 ];
+
 const createComments = () => ({
 
   id: getRandomArrayElement(ID),
@@ -50,6 +55,6 @@ const similarPosts = Array.from({length: 25}, createPost);
 const getPhotosDesc = (n) => Array.from({length: n}, createPost);
 
 
-export {similarComments,similarPosts,getPhotosDesc,createPost,MAX_PHOTO};
+export {similarComments,similarPosts,getPhotosDesc,createPost,MAX_PHOTO,MESSAGE,ID};
 
 
