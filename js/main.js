@@ -1,7 +1,5 @@
-import {MAX_PHOTO, getPhotosDesc} from './data.js';
-import {renderPhotos} from './photos.js';
+import {getPictures} from './data.js';
+import {renderGallery} from './gallery.js';
 
-const photoArray = getPhotosDesc(MAX_PHOTO);
-renderPhotos(photoArray);
-
+renderGallery(getPictures());
 
