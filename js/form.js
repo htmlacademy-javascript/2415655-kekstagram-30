@@ -1,3 +1,8 @@
+import {
+  init as initEffect,
+  //reset as resetEffect
+} from './effect.js';
+
 const MAX_TAG = 5;
 const VALID = /^#[a-za-яё0-9]{1,19}$/i;
 
@@ -93,3 +98,4 @@ pristine.addValidator(
 fileField.addEventListener('change', onFileInputChange);
 cancelBtn.addEventListener('click', onCancelButtonClick);
 form.addEventListener('submit', onFormSubmit);
+initEffect();
