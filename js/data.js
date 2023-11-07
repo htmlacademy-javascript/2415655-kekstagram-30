@@ -7,9 +7,7 @@ const ID = [
 ];
 
 const DESC = [
-  'Photo is great', 'Photo is not great', 'Photo is good', 'Photo is bad',
-  'Photo is great', 'Photo is not great'
-
+  'Photo is great', 'Photo is not great', 'Photo is good', 'Photo is bad'
 ];
 
 const IMG = [
