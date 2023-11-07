@@ -7,7 +7,7 @@ const ID = [
 ];
 
 const DESC = [
-  'Photo is great', 'Photo is not great'
+  'Photo is great', 'Photo is not great', 'Photo is good', 'Photo is bad'
 ];
 
 const IMG = [
@@ -48,13 +48,13 @@ const createPost = () => ({
   comments: Array.from({length: getRandomInteger(0, 30)}, createComments)
 });
 
+const getPictures = () => Array.from(
+  {length: MAX_PHOTO},
+  (_, pictureIndex) => createPost(pictureIndex + 1),
+);
+//const getPhotosDesc = () => Array.from({length: MAX_PHOTO}, createPost);
 
-const similarComments = Array.from({length: 30}, createComments);
-const similarPosts = Array.from({length: 25}, createPost);
 
-const getPhotosDesc = (n) => Array.from({length: n}, createPost);
-
-
-export {similarComments,similarPosts,getPhotosDesc,createPost,MAX_PHOTO,MESSAGE,ID};
+export {getPictures};
 
 
