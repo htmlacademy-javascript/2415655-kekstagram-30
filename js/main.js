@@ -1,13 +1,22 @@
-import {similarComments, similarPosts} from './data.js';
 
-console.log(
-    similarComments()
-);
-console.log(
-    similarPosts()
-);
+//import {getPictures} from './data.js';
+import {renderGallery} from './gallery.js';
+import {loadPictures} from './api.js';
+import {showErrorMessage} from './util.js';
 
 
-console.log(
-  similarPosts
-);
+import './form.js';
+import {initFilter} from './filters.js';
+//renderGallery(getPictures());
+
+async function bootstrap() {
+  try {
+    const pictures = await loadPictures();
+    renderGallery(pictures);
+    initFilter(pictures);
+
+  } catch(error) {
+    showErrorMessage();
+  }
+}
+bootstrap();
