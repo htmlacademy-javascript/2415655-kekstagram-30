@@ -6,8 +6,8 @@ const container = document.querySelector('.pictures');
 
 const clearGallery = () => {
   const pictures = document.querySelectorAll('.picture');
-  pictures.forEach(item => item.remove());
-}
+  pictures.forEach((item) => item.remove());
+};
 
 const renderGallery = (pictures) => {
   clearGallery();
