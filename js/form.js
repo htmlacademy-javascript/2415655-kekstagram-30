@@ -7,6 +7,7 @@ import {showSuccesMessage,showErrorMessage} from './message.js';
 
 const MAX_TAG = 5;
 const VALID = /^#[a-za-яё0-9]{1,19}$/i;
+const FILE_TYPES = ['jpg','jpeg','png'];
 
 const ErrorText = {
   INVALID_COUNT: `Максимум ${MAX_TAG} хэштэгов`,
@@ -27,6 +28,8 @@ const fileField = form.querySelector('.img-upload__input');
 const hashtagField = form.querySelector('.text__hashtags');
 const commentField = form.querySelector('.text__description');
 const submitButton = form.querySelector('.img-upload__submit');
+const photoPreview = form.querySelector('.img-upload__preview img');
+const effectsPreviews = form.querySelectorAll('.effects__preview');
 
 function toggleSubmitButton(isDisabled) {
   submitButton.disabled = isDisabled;
@@ -64,6 +67,11 @@ const isTextFieldFocused = () => document.activeElement === hashtagField || docu
 
 const normalizeTags = (tagString) => tagString.trim().split('').filter((tag) => Boolean(tag.length));
 
+const isValidType = (file) => {
+  const fileName = file.name.toLowerCase();
+  return FILE_TYPES.some((it) => fileName.endsWith(it));
+};
+
 const hasValidTags = (value) => normalizeTags(value).every((tag) => VALID.test(tag));
 const hasValidCount = (value) => normalizeTags(value).length <= MAX_TAG;
 
@@ -81,10 +89,19 @@ function onDocumentKeydown(evt) {
 }
 
 const onCancelButtonClick = () => {
+
   hideModal();
 };
 
 const onFileInputChange = () => {
+  const file = fileField.files[0];
+
+  if (file && isValidType(file)){
+    photoPreview.src = URL.createObjectURL(file);
+    effectsPreviews.forEach((preview) => {
+      preview.style.backgroundImage = `url('${photoPreview.src}')`;
+    });
+  }
   showModal();
 };
 
