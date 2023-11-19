@@ -4,6 +4,7 @@ import {
 } from './effect.js';
 import { sendPictures } from './api.js';
 import {showSuccesMessage,showErrorMessage} from './message.js';
+import {resetToDefault} from './scale.js';
 
 const MAX_TAG = 5;
 const VALID = /^#[a-za-яё0-9]{1,19}$/i;
@@ -46,7 +47,7 @@ function toggleSubmitButton(isDisabled) {
 const pristine = new Pristine(form, {
   classTo: 'img-upload__field-wrapper',
   errorTextParent: 'img-upload__field-wrapper',
-  errorTextClass: 'img-upload__field-wrapper-error'
+  errorTextClass: 'img-upload__field-wrapper__error'
 });
 
 const showModal = () => {
@@ -103,6 +104,7 @@ const onFileInputChange = () => {
     });
   }
   showModal();
+  resetToDefault();
 };
 
 async function sendForm(formElement){

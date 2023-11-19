@@ -3,7 +3,7 @@ const COMMENT_SHOW = 5;
 
 const bigPictureElement = document.querySelector('.big-picture');
 const bodyElement = document.querySelector('body');
-const closePictureButtonButton = bigPictureElement.querySelector('.big-picture__cancel');
+const closePictureButtonButton = document.querySelector('.big-picture__cancel');
 
 
 const commentsCountElement = bigPictureElement.querySelector('.social__comment-shown-count');
