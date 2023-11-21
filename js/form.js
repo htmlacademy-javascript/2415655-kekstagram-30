@@ -8,7 +8,7 @@ import {resetToDefault} from './scale.js';
 
 const MAX_TAG = 5;
 const VALID = /^#[a-za-яё0-9]{1,19}$/i;
-const FILE_TYPES = ['jpg','jpeg','png'];
+const FILE_TYPES = ['jpg','jpeg','png', 'webp'];
 
 const ErrorText = {
   INVALID_COUNT: `Максимум ${MAX_TAG} хэштэгов`,
@@ -69,6 +69,7 @@ const isTextFieldFocused = () => document.activeElement === hashtagField || docu
 const normalizeTags = (tagString) => tagString.trim().split('').filter((tag) => Boolean(tag.length));
 
 const isValidType = (file) => {
+  console.log(file);
   const fileName = file.name.toLowerCase();
   return FILE_TYPES.some((it) => fileName.endsWith(it));
 };
