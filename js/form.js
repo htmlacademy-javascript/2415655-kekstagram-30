@@ -57,7 +57,7 @@ const showModal = () => {
 };
 
 const hideModal = () => {
-  form.requestFullscreen();
+//  form.requestFullscreen();
   pristine.reset();
   overlay.classList.add('hidden');
   body.classList.remove('modal-open');
@@ -69,7 +69,6 @@ const isTextFieldFocused = () => document.activeElement === hashtagField || docu
 const normalizeTags = (tagString) => tagString.trim().split('').filter((tag) => Boolean(tag.length));
 
 const isValidType = (file) => {
-  console.log(file);
   const fileName = file.name.toLowerCase();
   return FILE_TYPES.some((it) => fileName.endsWith(it));
 };
