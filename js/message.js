@@ -13,7 +13,6 @@ function hideMessage() {
   const existsElement = document.querySelector('.success') || document.querySelector('.error');
   existsElement.remove();
   document.removeEventListener('keydown', onDocumentKeydown);
-  document.body.removeEventListener('click', onBodyClick);
 }
 function onCloseButtonClick() {
   hideMessage();
@@ -47,4 +46,4 @@ function showErrorMessage() {
   showMessage(errorMessageElement, '.error__button');
 }
 
-export {showSuccesMessage,showErrorMessage};
+export { showSuccesMessage, showErrorMessage };
