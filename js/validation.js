@@ -1,16 +1,7 @@
+import { MAX_TAG, VALID, ErrorText } from './constants';
+
 const form = document.querySelector('.img-upload__form');
 const hashtagField = form.querySelector('.text__hashtags');
-// const commentField = form.querySelector('.text__description');
-
-const MAX_TAG = 5;
-const VALID = /^#[a-za-яё0-9]{1,19}$/i;
-
-
-const ErrorText = {
-  INVALID_COUNT: `Максимум ${MAX_TAG} хэштэгов`,
-  NOT_UNIQ: 'Хэштэги должны быть уникальными',
-  INVALID_PATTERN: 'Неверный хэштэг',
-};
 
 const pristine = new Pristine(form, {
   classTo: 'img-upload__field-wrapper',
@@ -19,7 +10,6 @@ const pristine = new Pristine(form, {
 });
 
 const normalizeTags = (tagString) => tagString.replace(/ */, ' ').trim().split(' ').filter((tag) => Boolean(tag.length));
-
 
 const hasValidTags = (value) => normalizeTags(value).every((tag) => VALID.test(tag));
 const hasValidCount = (value) => normalizeTags(value).length <= MAX_TAG;

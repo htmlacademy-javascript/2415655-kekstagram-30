@@ -1,6 +1,5 @@
 import {
   init as initEffect,
-  //reset as resetEffect
 } from './effect.js';
 import { sendPictures } from './api.js';
 import { showSuccesMessage, showErrorMessage } from './message.js';
@@ -28,14 +27,7 @@ const SubmitButtonCaption = {
 
 function toggleSubmitButton(isDisabled) {
   submitButton.disabled = isDisabled;
-  if (isDisabled) {
-    submitButton.textContent = SubmitButtonCaption.SUBMITING;
-  } else {
-    submitButton.textContent = SubmitButtonCaption.IDLE;
-  }
-  // submitButton.textContent = isDisabled
-  //   ? SubmitButtonCaption.SUBMITING
-  //   ! SubmitButtonCaption.IDLE;
+  submitButton.textContent = isDisabled ? SubmitButtonCaption.SUBMITING : SubmitButtonCaption.IDLE;
 }
 
 const showModal = () => {
@@ -86,11 +78,9 @@ const onFileInputChange = () => {
 
 async function sendForm(formElement) {
   if (!isValid()) {
-
     return;
   }
   try {
-
     toggleSubmitButton(true);
     await sendPictures(new FormData(formElement));
 

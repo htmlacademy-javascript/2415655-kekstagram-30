@@ -10,11 +10,6 @@ const HttpMethod = {
   POST: 'POST',
 };
 
-// const ErrorText = {
-//   [HttpMethod.GET]: 'Не удалось загрузить данные',
-//   [HttpMethod.SEND]: 'Не удалось отправить данные',
-// };
-
 async function request(url, method = HttpMethod.GET, body = null) {
   const response = await fetch(url, {method, body});
   if (! response.ok) {
