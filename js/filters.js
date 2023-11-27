@@ -36,6 +36,7 @@ const setActiveButton = (event) => {
 const repaint = (event, filter, data) => {
   const filteredData = filterHandlers[filter](data);
   renderGallery(filteredData);
+  console.log(renderGallery)
 };
 
 const debouncedRepaint = debounce(repaint);
