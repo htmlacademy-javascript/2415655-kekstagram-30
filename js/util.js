@@ -1,4 +1,4 @@
-import { REMOVE_MESSAGE_TIMEOUT } from './constants';
+import { REMOVE_MESSAGE_TIMEOUT } from './constants.js';
 
 const errorMessageTemplate = document
   .querySelector('#data-error')
