@@ -1,4 +1,4 @@
-const succesMessageElement = document
+const successMessageElement = document
   .querySelector('#success')
   .content
   .querySelector('.success');
@@ -42,12 +42,12 @@ function showMessage(element, buttonClass) {
     .addEventListener('click', onCloseButtonClick);
 }
 
-function showSuccesMessage() {
-  showMessage(succesMessageElement, '.success__button');
+function showSuccessMessage() {
+  showMessage(successMessageElement, '.success__button');
 }
 
 function showErrorMessage() {
   showMessage(errorMessageElement, '.error__button');
 }
 
-export { showSuccesMessage, showErrorMessage };
+export { showSuccessMessage, showErrorMessage };

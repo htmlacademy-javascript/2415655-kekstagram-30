@@ -14,7 +14,7 @@ const clearGallery = () => {
 const renderGallery = (data) => {
   clearGallery();
   pictures.length = 0;
-  pictures.push(...data.slice())
+  pictures.push(...data.slice());
   renderThumbnails(pictures, container);
 };
 
