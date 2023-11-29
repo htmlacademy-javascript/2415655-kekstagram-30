@@ -1,4 +1,4 @@
-import { ScaleSet } from './constants';
+import { ScaleSet } from './constants.js';
 
 const scaleSmallerButton = document.querySelector('.scale__control--smaller');
 const scaleBiggerButton = document.querySelector('.scale__control--bigger');

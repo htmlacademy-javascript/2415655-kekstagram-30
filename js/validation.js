@@ -1,4 +1,4 @@
-import { MAX_TAG, VALID, ErrorText } from './constants';
+import { MAX_TAG, VALID, ErrorText } from './constants.js';
 
 const form = document.querySelector('.img-upload__form');
 const hashtagField = form.querySelector('.text__hashtags');

@@ -1,9 +1,9 @@
-import { renderGallery } from './gallery';
-import { debounce, getRandomIndex } from './util';
+import { renderGallery } from './gallery.js';
+import { debounce, getRandomIndex } from './util.js';
 import {
   MAX_RANDOM_FILTER,
   FilterEnum
-} from './constants';
+} from './constants.js';
 
 const filtersEl = document.querySelector('.img-filters');
 const filtersForm = document.querySelector('.img-filters__form');

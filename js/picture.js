@@ -1,5 +1,5 @@
 
-import { COMMENT_SHOW } from './constants';
+import { COMMENT_SHOW } from './constants.js';
 
 const bigPictureElement = document.querySelector('.big-picture');
 const bodyElement = document.querySelector('body');

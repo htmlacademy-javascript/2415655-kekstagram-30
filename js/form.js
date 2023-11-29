@@ -2,7 +2,7 @@ import {
   init as initEffect,
 } from './effect.js';
 import { sendPictures } from './api.js';
-import { showSuccesMessage, showErrorMessage } from './message.js';
+import { showSuccessMessage, showErrorMessage } from './message.js';
 import { resetToDefault } from './scale.js';
 import { isValid, resetValidation } from './validation.js';
 
@@ -87,7 +87,7 @@ async function sendForm(formElement) {
     toggleSubmitButton(false);
 
     hideModal();
-    showSuccesMessage();
+    showSuccessMessage();
 
   } catch {
     showErrorMessage();
