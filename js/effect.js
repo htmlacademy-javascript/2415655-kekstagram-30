@@ -2,7 +2,7 @@ import {
   Effect,
   effectToFilter,
   effectToSliderOptions
-} from './constants';
+} from './constants.js';
 
 const modalElement = document.querySelector('.img-upload');
 const imageElement = modalElement.querySelector('.img-upload__preview img');
